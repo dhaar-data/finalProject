@@ -1,0 +1,293 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Playfair Display";
+}
+
+body { 
+    background-color: #2A88FF;
+}
+
+/* START: Welcome Sign */
+#welcome {
+    font-family: "Playfair Display";
+    position: absolute;
+    padding: 15px 40px 15px 40px;
+    letter-spacing: 1px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    background-color: whitesmoke;
+    box-shadow: 0 0 15px 3px rgba(0,0,0,0.25);
+    border-radius: 3px;
+}
+
+span {
+    opacity: 0;
+    transition: all 1.2s ease;
+}
+
+span.fade {
+    opacity: 1;
+}
+/* END: Welcome Sign */
+
+#title-container {
+    background-color: whitesmoke;
+    width: 45%;
+    padding: 5px 20px 5px 20px;
+    margin: 20px 0 0 20px;
+    box-shadow: 0 0 10px 3px rgba(0,0,0,0.25);
+    border-radius: 3px;
+}
+
+#title {
+    font-family: "Playfair Display";
+    font-size: 5vw;
+    font-weight: 200;
+    letter-spacing: 10%;
+}
+
+#sub-title {
+    font-family: "Playfair Display";
+    text-align: right;
+    letter-spacing: 1px;
+    opacity: 0.5;
+    font-size: 1.3vw;
+}
+
+#main-content {
+    background-color: #262626;
+}
+
+p.p-tab {
+    font-size: 120%;
+    color: whitesmoke;
+    letter-spacing: 0.025em;
+    line-height: 3em;
+}
+
+h2.h2-tab {
+    color: whitesmoke;
+    letter-spacing: 0.025em;
+    text-align: center;
+}
+
+/* START: TAB CONTROL */
+.tab-container {
+    margin-top: 81vh;
+    width: 75%;
+    margin-left: 12.5%;
+    padding-top: 50px;
+}
+
+.tabs, .tab-contents {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tabs {
+    text-align: center;
+    font-size: 0;
+}
+
+    .tabs li {
+        display: inline;
+    }
+
+        .tabs li a {
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            color: #262626;
+            border: 1px solid whitesmoke;
+            background-color: whitesmoke;
+            height: 5em;
+            line-height: 5em;
+            display: inline-block;
+            padding: 0 3em;
+            transition: all .3s ease;
+        }
+
+        .tabs li a.active {
+            background-color: #262626;
+            color: whitesmoke;
+            cursor: default;
+        }
+
+        .tabs li a:hover:not(.active) {
+            background-color: #262626;
+            color: whitesmoke;
+        }
+
+
+        .tabs li:first-child a {
+            -border-radius: 5px 0 0 5px;
+        }
+
+        .tabs li:last-child a {
+            -border-radius: 0 5px 5px 0;
+        }
+
+        .tabs li:not(:first-child) {
+            margin-left: -1px;
+        }
+
+.tab-contents {
+    width: 100%;
+    position: relative;
+}
+
+    .tab-contents li {
+        padding: 2em;
+        position: absolute;
+        top: 0;
+        left: -2em;
+        opacity: 0;
+        transition: opacity .3s ease;
+        pointer-events: none;
+        width: 100%;
+    }
+
+    .tab-contents li.visible {
+        opacity: 1;
+        pointer-events: auto;
+    }
+/* END: TAB CONTROL */
+
+/* START: COLUMN CHART FOR DATE TAB */
+#layout figcaption {
+    color: whitesmoke;
+    text-align: center;
+    font-size: 2em;
+    padding-bottom: 25px;
+}
+
+div#dateTabContainer {
+    width: 100%;
+    margin: 0;
+    background-color: whitesmoke;
+}
+
+.bar {
+    fill: #2A88FF;
+}
+
+text {
+    font-size: 12px;
+    color: #262626;
+}
+
+line {
+    stroke: gray;
+}
+
+.grid path {
+    stroke-width: 0;
+}
+
+.grid .tick line {
+    stroke: #9FAAAE;
+    stroke-opacity: 0.5;
+}
+
+text.value {
+    font-size: 50%;
+    color: #262626;
+}
+
+text.label {
+    font-size: 75%;
+    font-weight: 400;
+    color: #262626;
+}
+  
+div.mouseOverDiv {
+    position: absolute;
+    padding: .5rem;
+    background: #262626;
+    color: whitesmoke;
+    pointer-events: none;
+    font-size: 1.1rem;
+}
+/* END: COLUMN CHART FOR DATE TAB */
+
+
+/* START: LINE CHART FOR TYPE OF BREACH TAB */
+#multiLineChart figcaption {
+    color: whitesmoke;
+    font-size: 2em;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+#typeOfBreachTabContainer {
+    background-color: whitesmoke;
+}
+
+.tick text {
+    font-size: 80%;
+}
+
+div.hoverDetails {
+    position: absolute;
+    padding: .5rem;
+    background: #262626;
+    color: whitesmoke;
+    pointer-events: none;
+    font-size: 1.1rem;
+}
+/* END: LINE CHART FOR TYPE OF TAB */
+
+
+/* START: PIE CHART FOR TYPE OF ORGANIZATION TAB */
+#typeOfOrgTabContainer {
+    -border: 1px solid red;
+}
+
+div.hoverTooltip {
+    position: absolute;
+    padding: .5rem;
+    background: #FFFFFF;
+    color: #313639;
+    pointer-events: none;
+    font-size: 0.95rem;
+    width: fit-content;
+}
+div.hoverTooltip #percent {
+    display: inline-block;
+    padding-right: 0.5em;
+    padding-bottom: 0.3em;
+    font-size: 200%;
+    font-family: none;
+}
+
+div.hoverTooltip #details {
+    display: inline-block;
+}
+/* END: PIE CHART FOR TYPE OF ORGANIZATION TAB */
+
+
+/* START: HEXBIN MAP FOR RECORDS AFFECTED TAB */
+#hexbinUSMap figcaption {
+    text-align: center;
+    color: whitesmoke;
+    font-size: 2em;
+}
+
+.state-path {
+    stroke: #262626;
+}
+
+.hoverStateTooltip {
+    position: absolute;
+    padding: .5rem;
+    background: whitesmoke;
+    color: #262626;
+    pointer-events: none;
+    font-size: 1.1rem;
+    text-align: center;
+}
+/* END: HEXBIN MAP FOR RECORDS AFFECTED TAB */

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+
+    <title>Data Breaches</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- CSS styles for Playfair Display font -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Playfair+Display" />
+
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- Script for D3 -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+</head>
+<body>
+
+    <h1 id="welcome">WELCOME</h1>
+
+    <div id="title-container">
+        <h2 id="title">U.S. Data Breaches</h2>
+        <h3 id="sub-title"><i>From 2005-2019</i></h3>
+    </div>
+
+    <main id="main-content">
+        <!-- START: TAB CONTROL -->
+        <div class="tab-container">
+            <ul class="tabs">
+                <li><a href="tab-1" class="active">Date</a></li>
+                <li><a href="tab-2">Type of Breach</a></li>
+                <li><a href="tab-3">Type of Organization</a></li>
+                <li><a href="tab-4">State</a></li>
+            </ul>
+            <ul class="tab-contents">
+
+                <li id="tab-1" class="visible">
+
+                    <figure id="layout">
+                        <figcaption>Data Breaches by Year</figcaption>
+                        <div id="dateTabContainer"></div>
+                    </figure>
+                    <br>
+                    <hr>
+                    <br>
+                    <p class="p-tab">
+                        The column chart above shows the number of breaches by year, 
+                        from 2005 - 2019. You can hover over each column to get some 
+                        basic details about that specific column. As you can see, 
+                        data breaches drastically increase after 2009.
+                    </p>
+
+                </li>
+
+                <li id="tab-2">
+
+                    <figure id="multiLineChart">
+                        <figcaption>Breaches per Year by Type of Breach</figcaption>
+                        <div id="typeOfBreachTabContainer"></div>
+                    </figure>
+                    <br>
+                    <hr>
+                    <br>
+                    <h2 class="h2-tab">Breakdown of Each Type of Breach</h2>
+                    <br>
+                    <p class="p-tab">
+                        CARD<br>
+                        Fraud Involving Debit and Credit Cards Not Via Hacking (skimming devices at point-of-service terminals, etc.)<br><br>
+
+                        HACK<br>
+                        Hacked by an Outside Party or Infected by Malware<br><br>
+
+                        INSD<br>
+                        Insider (employee, contractor or customer)<br><br>
+
+                        PHYS<br>
+                        Physical (paper documents that are lost, discarded or stolen)<br><br>
+
+                        PORT<br>
+                        Portable Device (lost, discarded or stolen laptop, PDA, smartphone, memory stick, CDs, hard drive, data tape, etc.)<br><br>
+
+                        STAT<br>
+                        Stationary Computer Loss (lost, inappropriately accessed, discarded or stolen computer or server not designed for mobility)<br><br>
+
+                        DISC<br>
+                        Unintended Disclosure Not Involving Hacking, Intentional Breach or Physical Loss (sensitive information posted publicly, mishandled or sent to the wrong party via publishing online, sending in an email, sending in a mailing or sending via fax)<br><br>
+
+                        UNKN<br>
+                        Unknown (not enough information about breach to know how exactly the information was exposed)
+                    </p>
+                    
+                </li>
+
+                <li id="tab-3">
+
+                    <figure id="multiLineChart">
+                        <figcaption>Number of Breaches by Type of Organization</figcaption>
+                        <div id="typeOfOrgTabContainer"></div>
+                    </figure>
+                    <br>
+                    <hr>
+                    <br>
+                    <h2 class="h2-tab">Breakdown of The Types of Businesses</h2>
+                    <br>
+                    <p class="p-tab">
+                        BSF<br>
+                        Businesses (Financial and Insurance Services)<br><br>
+
+                        BSO<br>
+                        Businesses (Other)<br><br>
+
+                        BSR<br>
+                        Businesses (Retail/Merchant including Online Retail)<br><br>
+
+                        EDU<br>
+                        Educational Institutions<br><br>
+
+                        GOV<br>
+                        Government & Military<br><br>
+
+                        MED<br>
+                        Healthcare, Medical Providers and Medical Insurance Services<br><br>
+
+                        NGO<br>
+                        Nonprofits<br><br>
+
+                        UNKN<br>
+                        Unknown
+                    </p>
+
+                </li>
+
+                <li id="tab-4">
+
+                    <figure id="hexbinUSMap">
+                        <figcaption>Total Breaches and Records Affected by State</figcaption>
+                        <div id="recordsAffectedTabContainer"></div>
+                    </figure>
+                    <br>
+                    <hr>
+                    <br>
+                    <p class="p-tab">
+                        Hover over each state to see the total number of data breaches in the state, 
+                        as well as the total records affected by data breaches from 2005 - 2019.
+                    </p>
+
+                </li>
+                
+            </ul>
+        </div>
+    </main>
+    <!-- END: TAB CONTROL -->
+
+    <script src="/main.js"></script>
+    
+</body>
+</html>
